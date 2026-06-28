@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-#if ENABLE_INPUT_SYSTEM 
-    using UnityEngine.InputSystem;
-#endif
+// #if ENABLE_INPUT_SYSTEM 
+//     using UnityEngine.InputSystem;
+// #endif
 
 namespace I2.Loc
 {
@@ -49,11 +49,12 @@ namespace I2.Loc
 
         bool IsTouchInputSupported()
         {
-            #if ENABLE_INPUT_SYSTEM
-                return Touchscreen.current != null;
-            #else
-                return UnityEngine.Input.touchSupported;
-            #endif
+            // #if ENABLE_INPUT_SYSTEM
+            //     return Touchscreen.current != null;
+            // #else
+            //     return UnityEngine.Input.touchSupported;
+            // #endif
+            return UnityEngine.Input.touchSupported;
         }
 
         public virtual string GetFallbackSpecialization(string specialization)
